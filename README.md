@@ -28,3 +28,26 @@ HastyHex.
 The `-f` option increases the output buffer size which typically
 improves performance. Since MSVC doesn't support line-buffering, `-l`
 will be equivalent to `-f` on Windows.
+
+## Our Fork
+
+I used C++17 to rewrite this tool to support the specified length of data length, and support reading from a specific offset of the file.
+
+```sh
+OVERVIEW: hastyhex
+Usage: hastyhex [options] <input>
+OPTIONS:
+  -h [--help]                      Print hastyhex usage information and exit
+  -n [--length]                    Read only N bytes from the input.
+  -s [--seek]                      Read from the specified offset
+  -o [--out]                       Output to file instead of standard output
+  -p [--plain]                     Do not output color ("plain")
+  -l [--line]                      Force output line-buffered
+  -f [--force]                     Force output fully-buffered
+
+Example:
+  hastyhex example.bin
+
+```
+
+Improvements to Windows 10 should use the version in this link: [https://github.com/fcharlie/Planck/tree/master/utils/hastyhex](https://github.com/fcharlie/Planck/tree/master/utils/hastyhex)
